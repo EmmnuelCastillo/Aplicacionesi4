@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Moderno</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #1a1a2e;
+      color: #eaeaea;
+    }
+
+    .navbar {
+      background-color: #16213e;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .navbar a {
+      color: #eaeaea;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .card {
+      background-color: #0f3460;
+      color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+      border: none;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #17a2b8;
+      border-radius: 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      background-color: #138496;
+    }
+
+    .menu-item {
+      transition: transform 0.3s;
+    }
+
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+
+    .menu-item img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .menu-item a {
+      display: block;
+      text-decoration: none;
+      font-size: 18px;
+      color: #ffffff;
+      margin-top: 10px;
+    }
+
+    .menu-item a:hover {
+      color: #17a2b8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="text-center navbar">
+      <h1>Menú de Opciones</h1>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-4 mb-3">
+        <div class="card menu-item">
+          <div class="card-body text-center">
+            <img src="https://imgs.search.brave.com/YwudWrN4Lj8vJxcV_o3El7PbM-7cvPnPlufBkIIZmaw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudmV4ZWxzLmNv/bS9tZWRpYS91c2Vy/cy8zLzIwMDA5Ny9p/c29sYXRlZC9wcmV2/aWV3Lzk0MjgyMDgz/NjI0NmYwOGMyZDZi/ZTIwYTQ1YTg0MTM5/LWljb25vLWRlLWNh/cnJpdG8tZGUtY29t/cHJhcy1jYXJyaXRv/LWRlLWNvbXByYXMu/cG5n" alt="Productos">
+            <a href="productos">Productos</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card menu-item">
+          <div class="card-body text-center">
+            <img src="https://imgs.search.brave.com/MEvmvJfqHONwFbvfYj5BuKlQ1PAk9MyO3eb4S_AQwPQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudmV4ZWxzLmNv/bS9tZWRpYS91c2Vy/cy8zLzMzMTE2Ni9p/c29sYXRlZC9wcmV2/aWV3LzQ1MzBiOTRl/OGY4MmQ5NzczOGVh/MTVjMmJhNGM2OGFm/LWljb25vLWRlLXVu/YS1udWJlLWNvbi11/bi1jYXJyaXRvLWRl/LWNvbXByYXMteS11/bi10ZWxlZm9uby5w/bmc" alt="Clientes">
+            <a href="clientes">Clientes</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card menu-item">
+          <div class="card-body text-center">
+            <img src="https://imgs.search.brave.com/_3w1RbO_xkeZO7IazvEo_tGIiIxBR67_jAh-JNXzZ4w/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudmV4ZWxzLmNv/bS9tZWRpYS91c2Vy/cy8zLzEzMTcxMy9p/c29sYXRlZC9wcmV2/aWV3LzVkODFiOTgx/MWNkYWUxY2YzZmQw/YjBmMjc5YzY0YjVi/LXNpZ25vLXBsYW5v/LWRlLXBlcnNvbmFz/LnBuZw" alt="Proveedores">
+            <a href="proveedores">Proveedores</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

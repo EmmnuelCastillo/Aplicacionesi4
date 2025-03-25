@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta Proveedores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: #eaeaea;
+        }
+
+        .navbar {
+            background-color: #16213e;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            color: #eaeaea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .card {
+            background-color: #0f3460;
+            color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border: none;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #17a2b8;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            background-color: #138496;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center navbar">
+        <a href="clientes">Clientes</a>
+        <h1>Productos</h1>
+        <a href="proveedores">Proveedores</a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h5>Alta Proveedores</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/provs" method="POST">
+                            <label>Nombre del proveedor</label>
+                            <input type="text" class="form-control mb-3" name="namePro"
+                                placeholder="Nombre del proveedor" required>
+                            <label>Correo electrónico</label>
+                            <input type="email" class="form-control mb-3" name="email" placeholder="Correo electrónico"
+                                required>
+                            <label>Dirección</label>
+                            <input type="text" class="form-control mb-3" name="direction" placeholder="Dirección"
+                                required>
+                            <label>Número de teléfono</label>
+                            <input type="tel" class="form-control mb-3" name="phone" placeholder="Número de teléfono"
+                                required>
+                            <button class="btn btn-primary w-100" type="submit">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h5>Lista de Proveedores</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            {% for prov in provs %}
+                            <div class="col-md-6 mb-3">
+                                <div class="bg-dark p-3 rounded">
+                                    <form action="/editProv/{{ prov.namePro }}" method="POST">
+                                        <small>Nombre</small>
+                                        <input type="text" class="form-control mb-2" name="namePro"
+                                            value="{{ prov.namePro }}" required>
+                                        <small>Correo</small>
+                                        <input type="email" class="form-control mb-2" name="email"
+                                            value="{{ prov.email }}" required>
+                                        <small>Dirección</small>
+                                        <input type="text" class="form-control mb-2" name="direction"
+                                            value="{{ prov.direction }}" required>
+                                        <small>Teléfono</small>
+                                        <input type="tel" class="form-control mb-2" name="phone"
+                                            value="{{ prov.phone }}" required>
+                                        <button class="btn btn-primary btn-sm w-100 mt-2" type="submit">Editar</button>
+                                        <a href="{{ url_for('delete_prov', prov_name=prov.namePro) }}"
+                                            class="btn btn-danger btn-sm w-100 mt-2">Eliminar</a>
+                                    </form>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="/" class="back-link">Volver al menú</a>
+</body>
+
+</html>
